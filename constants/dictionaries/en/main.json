@@ -1,0 +1,9 @@
+{
+  "language": "Language",
+  "light": "Light",
+  "dark": "Dark",
+  "theme_mode": "Theme Mode",
+  "profile" : "Profile",
+  "manual_book" : "Manual Book",
+  "logout" : "Logout"
+}

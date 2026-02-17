@@ -1,0 +1,38 @@
+{
+  "settings_title": "Pengaturan Sistem",
+  "settings_desc": "Konfigurasi global identitas dan tampilan antarmuka.",
+  
+  "section_identity": "Identitas Aplikasi",
+  "section_identity_desc": "Data dasar branding sistem",
+  "app_name": "Nama Aplikasi",
+  "app_name_placeholder": "Masukkan nama aplikasi...",
+  "logo_url": "Logo URL (Icon)",
+  "label_logo" : "Logo",
+  "label_favicon" : "Logo (Favicon)",
+  "logo_url_placeholder": "https://example.com/logo.png",
+
+  "section_visual": "Gaya Visual",
+  "section_visual_desc": "Atur warna dan bentuk komponen",
+  "color_picker": "Warna",
+  "primary_color": "Warna Utama",
+  "border_radius": "Border Radius",
+
+  "section_typography": "Tipografi & Huruf",
+  "section_typography_desc": "Pengaturan teks dan ukuran",
+  "font_family": "Keluarga Font",
+  "font_size": "Ukuran Font Dasar (Pixel)",
+  "font_family_geist": "Geist Sans (Modern)",
+  "font_family_poppins": "Poppins (Friendly)",
+  "font_family_roboto": "Roboto (Clean & Classic)",
+
+  "section_navigation": "Navigasi",
+  "section_navigation_desc": "Metode menu yang digunakan",
+  "nav_mode": "Mode Navigasi",
+  "nav_mode_sidebar": "Sidebar Mode",
+  "nav_mode_navbar": "Navbar Mode",
+
+  "language": "Bahasa Utama",
+  "btn_save": "SIMPAN PERUBAHAN",
+  "btn_saving": "MENYIMPAN...",
+  "msg_success": "Konfigurasi aplikasi berhasil diperbarui secara global via Server!"
+}

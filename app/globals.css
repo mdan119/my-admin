@@ -1,26 +1,117 @@
 @import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Mode Terang (Default) */
+  --background: #f8fafc; /* zinc-50 */
+  --foreground: #0f172a; /* zinc-900 */
+  --muted: #64748b;     /* zinc-500 */
+  
+  /* Bridge Variables dari app-config.ts (Di-override via Layout) */
+  --primary: #0ea5e9; 
+  --radius: 0.5rem;
+  --font-size-base: 12px; 
+
+  /* Border Soft */
+  --border-soft: rgba(71, 85, 105, 0.08); 
+
+  /* --- LOGIKA RESPONSIF FONT SIZE --- */
+  /* Mobile: Ukuran Normal sesuai Settings */
+  --font-size: var(--font-size-base);
+
+  /* Tablet (md): Naik ke LG */
+  @media (min-width: 768px) {
+    --font-size: calc(var(--font-size-base) + 1px);
+  }
+
+  /* Laptop (lg): Naik ke XL */
+  @media (min-width: 1024px) {
+    --font-size: calc(var(--font-size-base) + 2px);
+  }
+
+  /* Monitor (xl): Naik ke 2XL */
+  @media (min-width: 1280px) {
+    --font-size: calc(var(--font-size-base) + 3px);
+  }
+
+  /* Monitor Besar (2xl): Extra Scaling */
+  @media (min-width: 1536px) {
+    --font-size: calc(var(--font-size-base) + 4px);
+  }
+
+  /* Mapping Kategori Skala Berbasis Dinamis */
+  --font-size-sm: calc(var(--font-size) - 4px);
+  --font-size-lg: calc(var(--font-size) + 1px);
+  --font-size-xl: calc(var(--font-size) + 2px);
+  --font-size-2xl: calc(var(--font-size) + 3px);
+}
+
+/* Mode Gelap */
+.dark {
+  --background: #1e1d25; 
+  --foreground: #ececed; 
+  --muted: #94a3b8; 
+  --card: #1c1c1f; 
+  --border-soft: rgba(255, 255, 255, 0.05);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-border-soft: var(--border-soft);
+  
+  /* Font Family (Diambil dari variable font Next.js) */
+  --font-sans: var(--font-main);
+  --radius-xl: var(--radius);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Font Size Scale - Terhubung otomatis ke Media Query di atas */
+  --text-sm: var(--font-size-sm);
+  --text-base: var(--font-size);
+  --text-lg: var(--font-size-lg);
+  --text-xl: var(--font-size-xl);
+  --text-2xl: var(--font-size-2xl);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--font-size); /* Jangkar utama body */
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--border-soft);
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-[var(--card)] 
+           border border-[var(--border-soft)] 
+           rounded-[var(--radius)] overflow-hidden shadow-sm 
+           transition-all duration-500;
+  }
+
+  .card-header {
+    @apply px-6 py-4 border-b border-[var(--border-soft)] 
+           flex items-center justify-between;
+  }
+
+  .card-body { @apply p-6 text-[var(--foreground)]; }
+
+  .card-footer {
+    @apply px-6 py-4 border-t border-[var(--border-soft)] 
+           bg-zinc-50/50 dark:bg-white/5;
+  }
+
+  .card-title { @apply text-base font-bold tracking-tight text-[var(--foreground)]; }
+  .card-description { @apply text-sm text-[var(--muted)]; }
 }

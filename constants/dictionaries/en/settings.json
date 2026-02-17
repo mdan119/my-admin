@@ -1,0 +1,15 @@
+{
+  "settings_title": "System Settings",
+  "settings_desc": "Global configuration for system identity and interface.",
+  "app_name": "Application Name",
+  "logo_url": "Logo URL (Icon)",
+  "primary_color": "Primary Color",
+  "border_radius": "Border Radius",
+  "font_family": "Font Family",
+  "font_size": "Base Font Size",
+  "nav_mode": "Navigation Mode",
+  "language": "Primary Language",
+  "btn_save": "SAVE CHANGES",
+  "btn_saving": "SAVING...",
+  "msg_success": "Application configuration updated globally!"
+}

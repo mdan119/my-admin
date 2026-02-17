@@ -30,8 +30,8 @@ A professional-grade, highly customizable, and dynamic Admin Template built with
 
 1.  **Clone the Repository**
     ```bash
-    git clone [https://github.com/your-username/my-admin-panel.git](https://github.com/your-username/my-admin-panel.git)
-    cd my-admin-panel
+    git clone [git@github.com:mdan119/my-admin.git](https://github.com/mdan119/my-admin.git)
+    cd my-admin
     ```
 
 2.  **Install Dependencies**
@@ -61,7 +61,7 @@ This is an open-learning project! I highly encourage you to:
 
 ## 👨‍💻 Developed By
 
-**[Your Name Here]**
+**MDAN119**
 *Fullstack Developer & UI Enthusiast*
 
 Let's connect and discuss more about web development:

@@ -1,0 +1,12 @@
+{
+    "product" : "Produk",
+    "product_list" : "Daftar Produk",
+    "categories" : "Kategori",
+    "electronic" : "Elektronik",
+    "fashion" : "Fashion",
+    "sales_transactions" : "Transaksi Penjualan",
+    "sales_list" : "Daftar Penjualan",
+    "new_sale" : "Input Penjualan",
+    "users" : "Pengguna",
+    "settings" : "Pengaturan"
+}

@@ -10,27 +10,27 @@ export interface MenuItem {
 export const SIDEBAR_MENU: MenuItem[] = [
   { title: "Dashboard", icon: LayoutDashboard, href: "/dashboard" },
   {
-    title: "Produk",
+    title: "product",
     icon: Box,
     children: [
-      { title: "List Produk", href: "/products" },
+      { title: "product_list", href: "/products" },
       { 
-        title: "Kategori", 
+        title: "categories", 
         children: [
-          { title: "Elektronik", href: "/products/elektronik" },
-          { title: "Fashion", href: "/products/fashion" },
+          { title: "electronic", href: "/products/elektronik" },
+          { title: "fashion", href: "/products/fashion" },
         ] 
       },
     ],
   },
   {
-    title: "Transaksi Penjualan",
+    title: "sales_transactions",
     icon: Settings,
     children: [
-      { title: "List Penjualan", href: "/sellings" },
-      { title: "Input Penjualan", href: "/input-selling" },
+      { title: "sales_list", href: "/sellings" },
+      { title: "new_sale", href: "/input-selling" },
     ],
   },
-  { title: "Users", icon: User, href: "/users" },
+  { title: "users", icon: User, href: "/users" },
 
 ];

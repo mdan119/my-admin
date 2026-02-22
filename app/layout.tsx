@@ -52,7 +52,7 @@ export default async function RootLayout({
   const initialLang = cookieStore.get("app-lang")?.value || "id";
   
   // Hanya ambil modul 'main' untuk initial load agar payload HTML awal kecil
-  const initialDict = await getDictionary(initialLang, ["main"]);
+  const initialDict = await getDictionary(initialLang, ["main","menu"]);
 
   const fontMap: Record<string, any> = {
     poppins: fontPoppins,

@@ -4,9 +4,11 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Fragment, useMemo } from "react";
 import { SIDEBAR_MENU, MenuItem } from "@/constants/menu-data";
+import { useLang } from "@/context/LangContext";
 
 export default function DynamicBreadcrumb() {
   const pathname = usePathname();
+  const { __lang } = useLang();
 
   // Fungsi rekursif untuk mencari urutan menu (breadth-first search)
   const breadcrumbTrail = useMemo(() => {
@@ -45,12 +47,12 @@ export default function DynamicBreadcrumb() {
           <Fragment key={label}>
             {isLast ? (
               <span className="font-semibold tracking-wide">
-                {label}
+                {__lang('menu.'+label)}
               </span>
             ) : (
               <>
                 <span className="opacity-60 hidden sm:block">
-                  {label}
+                  {__lang('menu.'+label)}
                 </span>
                 <span className="opacity-40 hidden sm:block">/</span>
               </>

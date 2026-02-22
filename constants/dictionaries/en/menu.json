@@ -1,0 +1,12 @@
+{
+    "product" : "Product",
+    "product_list" : "Product List",
+    "categories" : "Categories",
+    "electronic" : "Electronic",
+    "fashion" : "Fashion",
+    "sales_transactions" : "Sales Transactions",
+    "sales_list" : "Sales List",
+    "new_sale" : "New Sale",
+    "users" : "Users",
+    "settings" : "Settings"
+}

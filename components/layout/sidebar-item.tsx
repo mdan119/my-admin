@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Circle } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLang } from "@/context/LangContext";
 
 export const SidebarItem = ({ 
   item, 
@@ -17,6 +18,8 @@ export const SidebarItem = ({
   // Level 2+ tetap pakai state sendiri agar bisa buka sub-menu secara bebas
   const [internalOpen, setInternalOpen] = useState(false);
   const pathname = usePathname();
+
+  const { __lang } = useLang();
   
   const isActive = pathname === item.href;
   const hasChildren = item.children && item.children.length > 0;
@@ -76,7 +79,7 @@ export const SidebarItem = ({
       
       {!isMinimized && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex-1 flex items-center justify-between min-w-0">
-          <span className="font-medium truncate">{item.title}</span>
+          <span className="font-medium truncate">{__lang('menu.'+item.title)}</span>
           {hasChildren && (
             <motion.div animate={{ rotate: isOpen ? 180 : 0 }} className="shrink-0 ml-2">
               <ChevronDown size={14} />

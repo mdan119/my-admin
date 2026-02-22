@@ -11,7 +11,7 @@ export function LanguageProvider({ children, initialDict, initialLang }: any) {
   const [isPending, startTransition] = useTransition();
   
   // Menggunakan State agar reaktif saat pendaftaran/penghapusan modul
-  const [activeModules, setActiveModules] = useState<Set<string>>(new Set(["main"]));
+  const [activeModules, setActiveModules] = useState<Set<string>>(new Set(["main","menu"]));
 
   /**
    * TRANSLATE HELPER (__lang)
@@ -63,8 +63,9 @@ export function LanguageProvider({ children, initialDict, initialLang }: any) {
   const unloadModules = useCallback((modules: string[]) => {
     setActiveModules((prev) => {
       const next = new Set(prev);
+      const keep = ["main", "menu"];
       modules.forEach((m) => {
-        if (m !== "main") next.delete(m); // 'main' jangan pernah dihapus
+        if (!keep.includes(m)) next.delete(m);
       });
       return next;
     });

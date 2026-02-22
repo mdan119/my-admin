@@ -7,11 +7,15 @@ import { SidebarItem } from "./sidebar-item";
 import { ChevronLeft, ChevronRight, Settings, X } from "lucide-react";
 import { formatFileUrl } from "@/lib/storage";
 
+import { useLang } from "@/context/LangContext";
+
 export default function Sidebar({ isMobileOpen, setIsMobileOpen }: any) {
   // 1. Inisialisasi state langsung dari localStorage jika memungkinkan (Client Side)
   const [isMinimized, setIsMinimized] = useState(false);
   const [isHydrated, setIsHydrated] = useState(false);
   const [openMenuTitle, setOpenMenuTitle] = useState<string | null>(null);
+
+  const { __lang } = useLang();
 
   useEffect(() => {
     // Ambil status tersimpan segera setelah komponen mounted
@@ -134,7 +138,7 @@ export default function Sidebar({ isMobileOpen, setIsMobileOpen }: any) {
         {/* FOOTER */}
         <div className="p-4 border-t border-zinc-500/5 dark:border-white/5 shrink-0">
           <SidebarItem 
-            item={{ title: "Settings", icon: Settings, href: "/settings" }} 
+            item={{ title: __lang('menu.settings'), icon: Settings, href: "/settings" }} 
             isMinimized={isMinimized} 
             setIsMobileOpen={setIsMobileOpen}
             isOpen={openMenuTitle === "Settings"}
